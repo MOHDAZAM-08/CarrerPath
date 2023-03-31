@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+/* Navbar.css */
+
+.navbar {
+  background-color: #003b76;
+  color: #fff;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.navbar-brand{
+  padding-left: 3rem;
+  color: #ffffff;
+  font-size: larger;
+  font-weight: 900;
+}
+.navbar-brand:hover{
+  color:#ff8400;
+  font-size: larger;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.navbar-nav {
+  margin-right: 0; /* Remove default margin */
+  margin-left: auto; /* Push navbar-nav to the right */
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.nav-item {
+  margin-right: 20px; /* Add some spacing between nav items */
 }
 
-.App-link {
-  color: #61dafb;
+.nav-link {
+  color: #ffffff;
+  font-weight:400;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+.nav-link:hover {
+  color: #ff8400;
+  font-weight:400;
+}
+
+
+.navbar-nav li {
+  position: relative;
+  /* overflow: hidden; */
+  color: #fff;
+}
+
+.navbar-nav li .card {
+  margin-top: 10px;
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.navbar-nav li:hover .card {
+  display: block;
+}
+
+
+.navbar-nav li::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #fff;
+  transition: all 0.4s cubic-bezier(0.55, 0.085, 0.68, 0.53);
+}
+
+
+.navbar-nav li:hover::before {
+  width: 100%;
+  left: 0;
+  right: auto;
 }
